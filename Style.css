@@ -1,0 +1,198 @@
+body{
+	background: #000;
+	overflow:hidden;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+
+@font-face{
+	font-family: "RFDewiExpanded-Black";
+	src: url("./Fonts/RFDewiExpanded-Black.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+ }
+ @font-face{
+	font-family: "RFDewiExpanded-Light";
+	src: url("./Fonts/RFDewiExpanded-Light.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+ } 
+ @font-face{
+	font-family: "RFDewiExpanded-Bold";
+	src: url("./Fonts/RFDewiExpanded-Bold.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+ }
+
+p{
+	 font-family: "RFDewiExpanded-Light";
+	 color: #FFF;
+}
+
+.parent {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  height: 95vh; 
+}
+
+.child {
+  transform: scale(400%);
+  text-align: center;
+  
+}
+
+.timer.value {
+  color: red;
+ }
+
+.timer.label {
+  color: white; 
+  font-family: "RFDewiExpanded-Bold";
+}
+
+#demo {
+  display: inline-block;
+}
+
+#demo span {
+  margin: 5px 0; 
+  align-items: center; 
+  justify-content: center;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+  font-family: "RFDewiExpanded-Black";
+  text-transform: lowercase
+}
+
+a:link {
+  color: red;
+  animation: fadeIn 2s ease, popka 3s ease-out
+}
+
+a:visited {
+  color: red;
+}
+
+a:focus {
+  background: ##e75480;
+}
+
+a:hover {
+  background-image: linear-gradient(
+    90deg,
+    #020202 0%,
+    #7e0505 50%,
+	#020202 90%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+
+}
+
+a:active {
+  background: #FFF;
+  color: #e75480;
+}
+
+@keyframes blink {
+  50% {opacity: 0;} 
+}
+
+.blink {
+   animation: blink 2s ease-in infinite;
+}
+
+@keyframes slideUp 
+ {
+  from {
+    transform: translateY(300px);
+	opacity: 0;
+  }
+  to {
+    transform: translateY(0); 
+	opacity: 1;
+  }
+}
+
+#demo {
+  animation: slideUp 2s forwards;
+}
+
+@keyframes move-it {
+  0% {
+    background-position: initial;
+  }
+  100% {
+    background-position: -1500px 0px;
+  }
+}
+
+.animated {  
+  background: linear-gradient(
+    45deg,
+    hsl(0, 94.37%, 13.92%) 0%,
+    hsl(0, 94.29%, 13.73%) 4.2%,
+    hsl(0, 94.12%, 13.33%) 9.2%,
+    hsl(0, 93.75%, 12.55%) 14.8%,
+    hsl(0, 93.22%, 11.57%) 21%,
+    hsl(0, 96.15%, 10.2%) 27.7%,
+    hsl(0, 95.65%, 9.02%) 34.8%,
+    hsl(0, 94.87%, 7.65%) 42.1%,
+    hsl(0, 93.75%, 6.27%) 49.7%,
+    hsl(0, 92%, 4.9%) 57.3%,
+    hsl(0, 89.47%, 3.73%) 65%,
+    hsl(0, 100%, 2.35%) 72.5%,
+    hsl(0, 100%, 1.37%) 79.9%,
+    hsl(0, 100%, 0.59%) 87%,
+    hsl(0, 100%, 0.2%) 93.7%,
+    hsl(0, 0%, 0%) 100%
+  );
+);
+  background-size: 10000px 10000px;
+  animation: move-it 2s ease forwards, fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes popka {
+	0% {
+		transform: scale(5);
+		color: red;
+	}	
+	45% {
+		transform: scale(5);
+		color: red;
+	}
+	50% {
+		transform: scale(5);
+		color: white;
+	}
+	75% {
+		transform: scale(5);
+		color: red;
+	}
+	100% {
+		transform: scale(0);
+		color: red;
+	}
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
