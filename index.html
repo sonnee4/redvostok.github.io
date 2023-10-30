@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Красный Восток</title>
+		<link rel="stylesheet" href="Style.css">
+	</head>
+	<body>
+		<div class="parent">
+			<div class="child">
+
+				<p id="demo"></p>
+				<div id="firework" style="display: none;"></div>
+
+				<script>
+					var demo = document.getElementById("demo");
+					var firework = document.getElementById("firework");
+
+					var countDownDate = new Date("Oct 30, 2023 23:20:50").getTime();
+
+					var x = setInterval(function() {
+
+						var now = new Date().getTime();
+						var distance = countDownDate - now;
+
+						var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+						var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+						var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+						var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+						demo.innerHTML = '';
+
+						var daysSpan = document.createElement('span');
+						daysSpan.className = 'timer value';
+						daysSpan.innerHTML = days;
+						
+						var daysText = document.createElement('span');
+						daysText.className = 'timer label';
+						daysText.innerHTML = " Дней <br>";
+						
+						demo.appendChild(daysSpan);
+						demo.appendChild(daysText);
+						
+						var hoursSpan = document.createElement('span');
+						hoursSpan.className = 'timer value';
+						hoursSpan.innerHTML = hours;
+						
+						var hoursText = document.createElement('span');
+						hoursText.className = 'timer label';
+						hoursText.innerHTML = " Часов <br>"; 
+						
+						demo.appendChild(hoursSpan);
+						demo.appendChild(hoursText);
+						
+						var minutesSpan = document.createElement('span');
+						minutesSpan.className = 'timer value';
+						minutesSpan.innerHTML = minutes;
+						
+						var minutesText = document.createElement('span');
+						minutesText.className = 'timer label';
+						minutesText.innerHTML = " Минут <br>";
+						
+						demo.appendChild(minutesSpan);
+						demo.appendChild(minutesText);
+						
+						var secondsSpan = document.createElement('span');
+						secondsSpan.className = 'timer value';
+						secondsSpan.innerHTML = seconds;
+						
+						var secondsText = document.createElement('span');
+						secondsText.className = 'timer label';
+						secondsText.innerHTML = " Секунд";
+						
+						
+						
+						
+
+						demo.appendChild(secondsSpan);
+						demo.appendChild(secondsText);
+
+    
+							if (distance < 300000) {
+								daysSpan.classList.add("blink"); 
+								hoursSpan.classList.add("blink");
+								minutesSpan.classList.add("blink");
+								secondsSpan.classList.add("blink");
+							} 
+							else {
+								daysSpan.classList.remove("blink");
+								hoursSpan.classList.remove("blink");
+								minutesSpan.classList.remove("blink");
+								secondsSpan.classList.remove("blink");
+							}
+    
+							if (distance < 0) {
+								clearInterval(x);
+								document.getElementById("demo").innerHTML = "<a href=https://vk.com/lksmvao>Красный Восток</a>";
+								document.body.classList.add('animated');
+							}
+						
+					}, 1000);
+				</script>
+
+			</div>
+
+		</div>
+		
+	</body>
+</html>
