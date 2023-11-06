@@ -97,6 +97,11 @@
 								clearInterval(x);
 								document.getElementById("demo").innerHTML = "<a href=https://vk.com/lksmvao>Красный Восток</a>";
 								document.body.classList.add('animated');
+								var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+								link.type = 'image/x-icon';
+  								link.rel = 'shortcut icon';
+  								link.href = 'image/icon.png'; // Замените на URL вашей иконки
+
 							}
 						
 					}, 1000);
